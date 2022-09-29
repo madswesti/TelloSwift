@@ -1,4 +1,4 @@
-// swift-tools-version:5.1
+// swift-tools-version:5.7
 import PackageDescription
 
 let package = Package(
@@ -10,10 +10,10 @@ let package = Package(
         .library(name: "TelloSwift", targets: ["TelloSwift"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/apple/swift-nio.git", from: "2.10.0"),
+		.package(url: "https://github.com/apple/swift-nio.git", from: .init(stringLiteral: "2.42.0"))
     ],
     targets: [
-        .target(name: "TelloSwift", dependencies: ["NIO"], path:"TelloSwift"),
+		.target(name: "TelloSwift", dependencies: [.product(name: "NIO", package: "swift-nio")], path:"TelloSwift"),
         .testTarget(name: "TelloSwiftTests", dependencies: ["TelloSwift"], path:"TelloSwiftTests"),
     ]
 )
