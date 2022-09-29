@@ -13,7 +13,7 @@ let package = Package(
 		.package(url: "https://github.com/apple/swift-nio.git", from: .init(stringLiteral: "2.42.0"))
     ],
     targets: [
-		.target(name: "TelloSwift", dependencies: [.product(name: "NIO", package: "swift-nio")], path:"TelloSwift"),
-        .testTarget(name: "TelloSwiftTests", dependencies: ["TelloSwift"], path:"TelloSwiftTests"),
+		.target(name: "TelloSwift", dependencies: [.product(name: "NIO", package: "swift-nio")]),
+        .testTarget(name: "TelloSwiftTests", dependencies: ["TelloSwift"])
     ]
 )
